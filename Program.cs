@@ -10,10 +10,7 @@
         }
         public static string swap(string s)
         {
-            string temp;
-            temp = s.Substring(s.Length - 1) + s.Substring(1, s.Length - 2) + s.Substring(0, 1);
-            return temp;
-
+            return(s.Substring(s.Length - 1) + s.Substring(1, s.Length - 2) + s.Substring(0, 1));
         }
         public static void Main(string[] args)
         {
