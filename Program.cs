@@ -8,13 +8,13 @@
         {
 
         }
-       public static string createString(string s)
+       public static string okAppears(string s)
         {
-            if(s.Length>=1)
+            while(s.Contains("ok"))
             {
-                return (s.Substring(s.Length - 1) + s + s.Substring(s.Length - 1));
+                s = s.Remove(s.IndexOf("ok"), 2);
             }
-            return "";
+            return s;
             
         }
        
@@ -24,7 +24,7 @@
             Console.WriteLine("enter the string");
             string s = Console.ReadLine();
 
-            string t = createString(s);
+            string t = okAppears(s);
             Console.WriteLine("created string: " + t);
         }
 
