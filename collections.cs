@@ -10,6 +10,37 @@ public class collections
 	static void Main(string[] args)
 	{
 
+		//Dictionary
+
+		var dict1 = new Dictionary<int, string>();
+		dict1.Add(1, "a");
+		dict1.Add(2, "b");
+		dict1.Add(3, "c");
+		dict1.Add(4, "d");
+		dict1.Add(5, "e");
+		dict1.Add(6, "f");
+		dict1.Add(7, "g");
+		dict1.TryAdd(1, "d");
+		foreach(var kvp in dict1)
+		{
+			if (kvp.Key == 5)
+			{
+				dict1[kvp.Key] = "A";
+			}
+		}
+		foreach (var kvp in dict1)
+		{
+			Console.WriteLine("KEY: " + kvp.Key+" VALUE: "+kvp.Value);
+		}
+
+
+
+
+
+
+
+
+		/*
 		//Linked list
 
 		var linkedList = new LinkedList<int>();
@@ -42,6 +73,7 @@ public class collections
         {
             Console.WriteLine(item);
         }
+		*/
 
     }
 }
