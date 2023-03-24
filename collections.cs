@@ -6,9 +6,57 @@ public class collections
 	{
 
 	}
-		static void Main(string[] args)
-		{
 
+	static void Main(string[] args)
+	{
+
+		//Linked list
+
+		var linkedList = new LinkedList<int>();
+
+		linkedList.AddLast(1);
+		linkedList.AddLast(2);
+		linkedList.AddLast(3);
+		linkedList.AddLast(4);
+		linkedList.AddLast(5);
+		linkedList.AddLast(6);
+		linkedList.AddLast(7);
+		linkedList.AddLast(8);
+		linkedList.AddLast(9);
+		linkedList.AddLast(2);
+
+		
+		LinkedListNode<int> node = linkedList.Find(2);
+        LinkedListNode<int> node2 = linkedList.FindLast(2);
+        linkedList.AddBefore(node, -2);
+		linkedList.AddAfter(node2, -2);
+
+		for(LinkedListNode<int> i = linkedList.First; i!=null;i=i.Next)
+		{
+			if(i.Value == -2)
+			{
+				linkedList.AddBefore(i, -1);
+			}
+		}
+        foreach (var item in linkedList)
+        {
+            Console.WriteLine(item);
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+		/*
         Console.WriteLine("List Demo");
         var listDemo = new List<string>() { "new", "oranges" };
         listDemo.Add("Hello");
@@ -69,10 +117,7 @@ public class collections
 		{
 			Console.WriteLine("dequeued element: "+ queue.Dequeue()) ;
 		}
+	*/
 
-
-
-    }
 
 	
-}
