@@ -8,17 +8,24 @@
         {
 
         }
-        public static string swap(string s)
+       public static string createString(string s)
         {
-            return(s.Substring(s.Length - 1) + s.Substring(1, s.Length - 2) + s.Substring(0, 1));
+            if(s.Length>=1)
+            {
+                return (s.Substring(s.Length - 1) + s + s.Substring(s.Length - 1));
+            }
+            return "";
+            
         }
+       
+
         public static void Main(string[] args)
         {
             Console.WriteLine("enter the string");
             string s = Console.ReadLine();
 
-            string t = swap(s);
-            Console.WriteLine("After reversing: " + t);
+            string t = createString(s);
+            Console.WriteLine("created string: " + t);
         }
 
 
