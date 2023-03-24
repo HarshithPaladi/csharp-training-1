@@ -10,8 +10,41 @@ public class collections
 	static void Main(string[] args)
 	{
 
+
+
+		
 		//Dictionary
 
+		var dict = new SortedDictionary<string, string>();
+		
+		dict.Add("c", "apple");
+		dict.Add("d", "dog");
+        dict.Add("b", "ball");
+        dict.Add("a", "cat");
+
+	    //Console.WriteLine(dict.Remove("d"));
+		Console.WriteLine(dict.ContainsKey("d"));
+        foreach (var item in dict.OrderBy(x => x.Value))
+        {
+            Console.WriteLine(item);
+            if (item.Value == "d")
+            {
+                dict.Remove(item.Key);
+            }
+        }
+
+        foreach (var i in dict.OrderBy(x => x.Value))
+		{
+			Console.WriteLine(i);
+		}
+
+        foreach (var kvp in dict)
+        {
+            Console.WriteLine("KEY: " + kvp.Key + " VALUE: " + kvp.Value);
+        }
+
+
+        /*
 		var dict1 = new Dictionary<int, string>();
 		dict1.Add(1, "a");
 		dict1.Add(2, "b");
