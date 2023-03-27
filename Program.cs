@@ -9,9 +9,9 @@
 
         }
         
-        public void methodOverload()
+        public void methodOverload(days day)
         {
-            Console.WriteLine("no parameters method");
+            Console.WriteLine("enum parameters method "+day);
         }
 
         private void methodOverload(int i) {
@@ -22,15 +22,15 @@
         {
             Console.WriteLine("overloading with string paramter");
         }
-   
+        public enum days { mon, teu, wed };
         public static void Main(string[] args)
         {
 
             var p = new Program();  
-            p.methodOverload();
+            p.methodOverload(days.mon);
             p.methodOverload(1);
             p.methodOverload("name");
-
+            
             // var t = new test();
             //var t2 = new test.testInternal();
             //t2.testInternalmethod();
