@@ -6,15 +6,15 @@ public class collections
 	{
 
 	}
-
-	static void Main(string[] args)
+}
+	/*static void Main(string[] args)
 	{
 
 
 
-		
+		/*
 		//Dictionary
-
+		
 		var dict = new SortedDictionary<string, string>();
 		
 		dict.Add("c", "apple");
@@ -106,11 +106,10 @@ public class collections
         {
             Console.WriteLine(item);
         }
-		*/
+		
 
     }
 }
-
 
 
 

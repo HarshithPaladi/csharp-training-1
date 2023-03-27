@@ -8,7 +8,7 @@
         {
 
         }
-        
+      /*  
         public void methodOverload(days day)
         {
             Console.WriteLine("enum parameters method "+day);
@@ -23,13 +23,14 @@
             Console.WriteLine("overloading with string paramter");
         }
         public enum days { mon, teu, wed };
-        public static void Main(string[] args)
-        {
+      */
+       // public static void Main(string[] args)
+        
 
-            var p = new Program();  
-            p.methodOverload(days.mon);
-            p.methodOverload(1);
-            p.methodOverload("name");
+           // var p = new Program();  
+            //p.methodOverload(days.mon);
+            //p.methodOverload(1);
+            //p.methodOverload("name");
             
             // var t = new test();
             //var t2 = new test.testInternal();
@@ -48,7 +49,7 @@
             //volvo.test();
             //volvo.ABS();
             //volvo.sportsCar();
-        }
+        
 
 
     }

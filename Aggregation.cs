@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace csharp2
 {
-    
+    /*
     public class parent
     {
         public int id; 
@@ -45,18 +46,36 @@ namespace csharp2
 
         }
     }
-
-    internal class Aggregation
+    */
+    abstract public class Aggregation
     {
 
+        abstract public void method();
+
+        public void nonAbstract()
+        {
+            Console.WriteLine("Not an abstract method");
+        }
         public static void Main(String[] args)
         {
 
-            var c1 = new child();
-            c1.parentMethod();
-            var p1 = new parent();
-            p1.parentMethod();
+            // var c1 = new child();
+            // c1.parentMethod();
+            // var p1 = new parent();
+            // p1.parentMethod();
 
+            var c1 = new child();
+            c1.method();
+            c1.nonAbstract();
+
+        }
+    }
+
+    public class child: Aggregation
+    {
+        override public void method()
+        {
+            Console.WriteLine("implemented abstract method");
         }
     }
 

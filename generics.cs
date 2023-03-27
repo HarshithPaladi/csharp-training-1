@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+/*
+using System;
 using System.Collections.Generic;
 
 class myGeneric<T>
@@ -21,5 +23,6 @@ public class generics
 	}
 }
 
-*/
+
 }
+*/

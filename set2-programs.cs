@@ -1,4 +1,5 @@
-﻿using System;
+﻿/*
+using System;
 using System.Net.Http.Headers;
 
 
@@ -108,7 +109,7 @@ public class Class2
         Console.WriteLine();
     }
 
-
+/*
     public static void Main(string[] args)
     {
         int[] a = { 1, 2, 5, 2, 3, 4, 1, 3, 5, 3, 56, 1 }; 
@@ -120,3 +121,4 @@ public class Class2
 
     }
 
+*/
