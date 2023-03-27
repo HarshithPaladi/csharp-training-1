@@ -6,10 +6,62 @@ using System.Threading.Tasks;
 
 namespace csharp2
 {
-    internal class Aggregation
+    
+    public class parent
     {
+        public int id; 
+        public string name;
+
+        public parent()
+        {
+            id = 1;
+            name = "sravani";
+        }
+        
+        public void method1()
+        {
+            Console.WriteLine("parent method 1");
+        }
+
+        virtual public void parentMethod()
+
+        { Console.WriteLine("this is virtual parent method "); }
+
     }
 
+    public class child: parent
+    {
+       sealed override public void parentMethod()
+        { 
+            Console.WriteLine("sealed overridden child method");
+        }
+
+    }
+
+    public class child2: child
+    {
+        override public void parentMethod()
+        {
+
+        }
+    }
+
+    internal class Aggregation
+    {
+
+        public static void Main(String[] args)
+        {
+
+            var c1 = new child();
+            c1.parentMethod();
+            var p1 = new parent();
+            p1.parentMethod();
+
+        }
+    }
+
+    /*
+   
     public class Student
     {
         public string name;
@@ -58,17 +110,18 @@ namespace csharp2
            // Console.WriteLine("percentage " + percentage);
 
         }
+   
+       // public static void Main(String[] args)
+       // {
 
-        public static void Main(String[] args)
-        {
+           // var m1 = new Marks(490, 5);
+            //var s1 = new Student("sravs",20,1,"csbs",m1);
+            //m1.calcPercentage();
+            //s1.displayDetails();
 
-            var m1 = new Marks(490, 5);
-            var s1 = new Student("sravs",20,1,"csbs",m1);
-            m1.calcPercentage();
-            s1.displayDetails();
-
-        }
-
+        //}
+   
     
     }
+   */
 }
