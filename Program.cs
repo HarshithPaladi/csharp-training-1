@@ -8,10 +8,28 @@
         {
 
         }
-       
+        
+        public void methodOverload()
+        {
+            Console.WriteLine("no parameters method");
+        }
+
+        private void methodOverload(int i) {
+            Console.WriteLine("overloading with int parameter");
+        }
+
+        private void methodOverload(string s)
+        {
+            Console.WriteLine("overloading with string paramter");
+        }
    
         public static void Main(string[] args)
         {
+
+            var p = new Program();  
+            p.methodOverload();
+            p.methodOverload(1);
+            p.methodOverload("name");
 
             // var t = new test();
             //var t2 = new test.testInternal();
@@ -23,12 +41,12 @@
             //a.display("this is access class");
             //Console.WriteLine(a.name);
 
-            inheritance volvo = new volvo();
+           // inheritance volvo = new volvo();
             // var volvo = new volvoSports();
             
-            volvo.maxSpeed(10);
+            //volvo.maxSpeed(10);
             //volvo.test();
-            volvo.ABS();
+            //volvo.ABS();
             //volvo.sportsCar();
         }
 
