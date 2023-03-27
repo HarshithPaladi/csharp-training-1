@@ -8,24 +8,28 @@
         {
 
         }
-       public static string okAppears(string s)
-        {
-            while(s.Contains("ok"))
-            {
-                s = s.Remove(s.IndexOf("ok"), 2);
-            }
-            return s;
-            
-        }
        
-
+   
         public static void Main(string[] args)
         {
-            Console.WriteLine("enter the string");
-            string s = Console.ReadLine();
 
-            string t = okAppears(s);
-            Console.WriteLine("created string: " + t);
+            // var t = new test();
+            //var t2 = new test.testInternal();
+            //t2.testInternalmethod();
+            //t.testMethod();
+
+            //var a = new Program();
+            //var a = new Access();
+            //a.display("this is access class");
+            //Console.WriteLine(a.name);
+
+            inheritance volvo = new volvo();
+            // var volvo = new volvoSports();
+            
+            volvo.maxSpeed(10);
+            //volvo.test();
+            volvo.ABS();
+            //volvo.sportsCar();
         }
 
 
