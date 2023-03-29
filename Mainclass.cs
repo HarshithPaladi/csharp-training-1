@@ -10,6 +10,8 @@ namespace csharpTraining
     {
         public static async Task Main(string[] args)
         {
+            
+            
             //Async programming
             //Task<int> num = AsyncClass.number();
 

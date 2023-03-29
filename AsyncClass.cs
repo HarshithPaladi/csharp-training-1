@@ -86,6 +86,7 @@ namespace csharpTraining
         public static async Task<FileStream> openFile(string path)
         {
             FileStream file = null;
+
             Task.Run(() =>
                 {
                    file = new FileStream(path, FileMode.OpenOrCreate);
