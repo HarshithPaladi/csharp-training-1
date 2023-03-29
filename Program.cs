@@ -1,350 +1,209 @@
-﻿namespace csharp2
-{
+﻿using System.Globalization;
+using System.Reflection.Metadata.Ecma335;
 
+namespace csharpTraining
+{
+    public class MyClass<T>
+    {
+        //Declaring delegate in diffrent class
+        public delegate T DelegateMethod(T a, T b);
+    }
     internal class Program
     {
+        delegate void Print(string s);
+        delegate int delegateMethod(int a , int b);  //Declaring a delegate
+        public static int add(int a ,int b)
+        {
+            Console.WriteLine("Delegate method triggered");
+            Console.WriteLine(a+b);
+            return a + b;
+        }
 
-        public Program()
+        public static int sub(int a, int b)
         {
 
+
+            Console.WriteLine(a - b);
+            return a - b;
         }
-      /*  
-        public void methodOverload(days day)
+        public static int mul(int a,int b) {
+
+
+            Console.WriteLine(a * b);
+            return a * b;
+        }
+        public static int div(int a, int b)
         {
-            Console.WriteLine("enum parameters method "+day);
+
+
+            Console.WriteLine(a / b);
+            return a / b;
         }
 
-        private void methodOverload(int i) {
-            Console.WriteLine("overloading with int parameter");
-        }
 
-        private void methodOverload(string s)
+        /*public static void Main(string[] args)
+
         {
-            Console.WriteLine("overloading with string paramter");
+
+
+
+            //Lambda
+            var result = (int x, int y) =>
+            {
+                int total = 0;
+                total = x + y;
+                Console.WriteLine(total);
+                return total;
+            };
+            //int total = result(1, 2);
+            //lambda as paramenter
+
+            int[] a = { 1, 2, 3, 4, 5 };
+
+            int count = a.Count(num => num > 3);
+            //Console.WriteLine(count);
+
+            //readymade delegates
+
+            //Func<int, int, int> fn = (a, b) => a + b;
+            Console.WriteLine(student.fn(1, 2));
+
+            *//*List<student> students = new List<student>();
+            students.Add(new student() { Id = 1, Name ="Sravani",Age = 21 ,Native="atp",Dept = "civil",});
+            students.Add(new student() { Id = 2, Name = "Srav", Age = 27, Native = "gut", Dept = "ece", });
+            students.Add(new student() { Id = 30, Name = "Savani", Age = 11, Native = "vij", Dept = "csbs", });
+            students.Add(new student() { Id = 0, Name = "Srani", Age = -34, Native = "atp", Dept = "cse", });
+            students.Add(new student() { Id = 1, Name = "Sravi", Age = 25, Native = "tpt", Dept = "it", });
+            students.Add(new student() { Id = 2, Name = "Sra", Age = -12, Native = "atp", Dept = "ai", });
+
+            foreach (var s in students)
+            {
+                Console.WriteLine($"Id:{s.Id} Name:{s.Name} Age:{s.Age} native:{s.Native} dept:{s.Dept}");
+            }
+
+
+            Console.WriteLine();
+            //List<student> newStudent = students.FindAll(x => x.Age>20).ToList();
+           // students.Sort((s1, s2) => s1.Age.CompareTo(s2.Age));
+            students.ForEach(student => student.Id += 10);
+
+            students.Sort((s1,s2) => (s1.Age));  //does nothing 
+
+            students.Sort((s1, s2) => (s1.Age-s2.Age)); // similar to comapreTo 
+
+            foreach (var s in students)
+            {
+                Console.WriteLine($"Id:{s.Id} Name:{s.Name} Age:{s.Age} native:{s.Native} dept:{s.Dept}");
+            }*//*
+
+
+
+        }*/
+
+        //Lambda using class
+
+        public class student
+        {
+            //public int id;
+            //public string name;
+            //public int age;
+            //public string native;
+            //public string dept;
+
+            public int Id { set; get; }
+            public string Name { set; get; }
+
+            public int Age { set; get; }
+
+            public string Native { set; get; }
+
+            public string Dept { set; get; }
+
+            public static Func<int, int, int> fn = (a, b) => a + b;
+
         }
-        public enum days { mon, teu, wed };
-      */
-       // public static void Main(string[] args)
-        
 
-           // var p = new Program();  
-            //p.methodOverload(days.mon);
-            //p.methodOverload(1);
-            //p.methodOverload("name");
-            
-            // var t = new test();
-            //var t2 = new test.testInternal();
-            //t2.testInternalmethod();
-            //t.testMethod();
+        /*//Lamda expression without delegates
 
-            //var a = new Program();
-            //var a = new Access();
-            //a.display("this is access class");
-            //Console.WriteLine(a.name);
+        Dictionary<int, string> dict = new Dictionary<int, string>();
+        dict.Add(1, "C");
+        dict.Add(3, "A");                                                                       
+        dict.Add(0,"D");
+        dict.Add(2, "B");
 
-           // inheritance volvo = new volvo();
-            // var volvo = new volvoSports();
-            
-            //volvo.maxSpeed(10);
-            //volvo.test();
-            //volvo.ABS();
-            //volvo.sportsCar();
-        
+        foreach (var item in dict.OrderBy(x => x.Key).ToList() )
+        {
+            Console.WriteLine(item);
+        }\
+
+        //order with  multiple values
+         foreach ( var kv in Dict.OrderBy( x => x.Value[1]*-1 ).OrderBy( x => x.Value[0] ) )
+        {
+            Console.WriteLine( $" [ {kv.Value[0]} , {kv.Value[1]} ]" );
+        }
+
+         */
+        /* List<int> nums = new List<int>() { 1, 20, 3, 40, 5 };
+
+         List<int> fiveMultiples = nums.FindAll(x => x % 5 == 0);
+
+         List<string> s = new List<string>() { "cbc", "acd", "bdf" };
+
+         List<string> ordered = s.OrderBy(x => x).ToList();
+         var square = (int n) => { return n * n; };
+
+         foreach (string num in ordered)
+         {
+             Console.WriteLine(num);
+         }*/
+
+
+
+        /*  // Using delegate - anonymous function
+         * delegateMethod function = delegate (int a, int b) { return a + b; };
+        Console.WriteLine(function(1, 2));
+
+        Print print = delegate (string msg) { Console.WriteLine(msg); };
+        print.Invoke("sravani");*/
+        /*
+                    //USING delegates - lambda expression
+                    delegateMethod function = (num1, num2) => num1 + num2;
+                    Console.WriteLine(function.Invoke(1,2));
+
+                    Print print = (s) => Console.WriteLine(s);
+                    print.Invoke("sravani");
+
+
+                    var calculator = (int num1, int num2) => num1 + num2;
+                    calculator+= (int num1, int num2) => num1 + num2;
+                    calculator += (int num1, int num2) => num1 * num2;
+                    calculator += (int num1, int num2) => num1 / num2;*/
+        /*delegateMethod a = add;
+        /*delegateMethod b = sub;
+        delegateMethod c = mul;
+        delegateMethod d = div;
+        delegateMethod function = a+b+c+d;
+
+        function.Invoke(1, 2);  // invokes all one by one but if we print this here it will have only lastly returned item
+        //To access all methods using the delegate varaible
+        foreach (delegateMethod method in function.GetInvocationList())
+        {
+            method.Invoke(20, 10);  // invokes all and if we prit this here it prints every returned item
+        }*/
+        // function(2,3);  //only add method 
+        //function.Invoke(2,3);   //another way of calling
+
+        //Accessing delegate from diffrent class
+        // MyClass<int>.DelegateMethod function = add;
+        //MyClass<float>.DelegateMethod function
+
+        //function += new MyClass<float>.DelegateMethod(mul); //multi casting delegate
+        //function(2,3);  //it perfoms add and mul
+
+
+        //function.Invoke(2,3);  //performs only mul
+
 
 
     }
-
-
 }
-
-//attributes and constructors
-        /*
-        string Name;
-        int id;
-        string dept;
-        float grade;
-
-        public Program(string name , int id , string department , float grade)
-        {
-            Console.WriteLine("inside the constructor");
-            this.Name = name;
-            this.id = id;
-            this.dept = department;
-            this.grade = grade;
-
-        }
-
-        public void displayStudent()
-        {
-            Console.WriteLine($"Details of student \nName: {Name}\nID: {id}\nDEPARTMENT: {dept}\nGRADE: {grade}");
-            Console.WriteLine();
-        }
-
-
-        ~Program()
-        {
-            Console.WriteLine("destructor has been called");
-        }
-        /*
-
-
-        //function
-        public static void PrintArray(int[] a)
-        {
-            Console.WriteLine("Values in array: ");
-
-            foreach (int i in a)
-            {
-                Console.WriteLine(i);
-            }
-        }
-
-        //Structs
-
-        public struct Traingle
-        {
-
-          public int side1, side2, side3,perimeter;
-
-          public int calculatePerimeter( ) 
-            {
-                  return this.side1+ this.side2+ this.side3;
-            }
-        }
-
-
-        //enumerations
-
-        public enum days
-        {
-            monday,tuesday,wed,thu,fri,sat,sun
-        }
-
-        */
-
-        //user defined exception
-        /*
-        public class Myexception:Exception
-        {
-            public Myexception(string message):base(message)
-            { 
-                //Console.WriteLine(message);
-            }
-        }
-
-        public static void checkAge(int age) { 
-
-            if(age<18)
-            {
-                throw new Myexception("Sorry your age is below 18");
-            }
-        }
-        */
-
-        //static void Main(string[] args)
-        //  {
-
-
-
-
-        //EXCEPTION HANDLING
-        /*
-        int age = Convert.ToInt32(Console.ReadLine());
-        try
-        {
-            checkAge(age);
-        }
-        catch (Myexception e)
-        {
-            Console.WriteLine(e.Message);
-        }
-
-        int a = 10;
-        int b = 0;
-        int c;
-
-
-        try
-        {
-            Console.WriteLine("this is try block");
-            c = a / b;
-        }
-        catch(DivideByZeroException de)
-        { 
-            Console.WriteLine(de.Message);
-             Console.WriteLine("please dont try to divide by zero");
-        }
-
-        catch(Exception e)
-        {
-            Console.WriteLine(e.Message);
-
-            Console.WriteLine("catch block");
-        }
-        finally
-        {
-            Console.WriteLine("this is finally block");
-        }
-        Console.WriteLine();
-
-        /*
-
-        int[] arr = { 1, 2, 3, 4,5 };
-        try
-        {
-            Console.WriteLine(arr[8]);
-        }
-        catch(IndexOutOfRangeException ie)
-        {
-            Console.WriteLine(ie.Message);
-            Console.WriteLine("You are trying to access out of range index");
-
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e.Message);
-
-            Console.WriteLine("catch block");
-        }
-        finally
-        {
-            Console.WriteLine("this is finally block");
-        }
-        Console.WriteLine();
-
-
-
-
-
-
-
-
-
-        // CREATING THE OBJECTS OF THE PROGRAM CLASS
-        /*
-        Program p1 = new Program("sravs", 1, "cs", 9.8f);
-        Program myProgram1 = new Program("Latha", 10, "ece", 9.8f);
-
-        p1.displayStudent();
-        myProgram1.displayStudent();
-
-        /*
-
-        //ENUMS
-
-        int a = (int) days.monday;
-        Console.WriteLine(a);
-
-        foreach(string s in Enum.GetNames(typeof(days)))
-
-        {  Console.WriteLine(s); }
-
-        Console.WriteLine(Enum.GetName(typeof(days), 2));
-
-        Console.WriteLine();
-
-
-
-        /*
-       //Structs
-       Traingle T = new Traingle();
-       T.side1 = 1;
-       T.side2 = 2;
-       T.side3 = 3;
-        Console.WriteLine("perimeter "+T.calculatePerimeter());
-
-
-        // ARRAYS MULTI ARRAYS JAGGED ARRAYS
-
-        int[,] a2 = { { 1, 2, 3 }, { 4, 5, 6 } };
-
-        int[,] a2D = new int[3, 4];
-
-        a2D[0, 0] = 1;
-
-        for(int i=0;i<2;i++)
-        {
-            for(int j=0;j<3;j++)
-            {
-                Console.Write(a2[i,j]+" ");
-            }
-            Console.WriteLine();
-        }
-        */
-
-        /*
-
-
-        int[ , , ] a3D =
-        {
-            {
-                { 1, 2, 3 } ,
-                {10,20,30 }
-            },
-            {
-                { 4,5,6 },
-                { 5,6,7 }
-            }
-        };
-
-        Console.WriteLine("i "+a3D.GetLength( 0 ) );
-
-        Console.WriteLine("j "+a3D.GetLength(1));
-
-        Console.WriteLine("k "+a3D.GetLength(2));
-
-        for(int i=0;i<2;i++)
-        {
-            for(int j = 0;j<2;j++)
-            {
-                for(int k=0;k<3;k++)
-                {
-                    Console.Write(a3D[i, j, k]+" ");
-                }
-                Console.Write("  ");
-            }
-            Console.WriteLine();
-        }
-
-
-        /*
-
-
-
-        int[] a = { 1, 2, 3 };
-        int[] b = { 10, 20, 30};
-        PrintArray(a);
-        PrintArray(b);
-        // Console.WriteLine("Hello, World!");
-        */
-
-
-        /*
-        int[][] jagA = new int[2][];
-
-        jagA[0] = new int[] {1,2,3};
-
-        jagA[1] = new int[] {5,6};
-
-        for (int i = 0; i < 2; i++)
-        {
-            for (int j = 0; j < jagA[i].Length; j++)
-            {
-                Console.Write(jagA[i][j] + " ");
-            }
-            Console.WriteLine();
-        }
-
-
-        */
-
-        // ARRAYS MULTI ARRAYS JAGGED ARRAYS
-
-        // myClass c = new myClass();
-
-
-        //  }
-  
-
-
-
